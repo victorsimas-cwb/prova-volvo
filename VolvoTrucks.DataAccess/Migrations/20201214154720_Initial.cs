@@ -31,7 +31,7 @@ namespace VolvoTrucks.DataAccess.Migrations
                 {
                     TruckId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ModelTruckModelId = table.Column<int>(type: "int", nullable: true),
+                    TruckModelId = table.Column<int>(type: "int", nullable: false),
                     ManufacturingYear = table.Column<int>(type: "int", nullable: false),
                     ModelYear = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -40,12 +40,12 @@ namespace VolvoTrucks.DataAccess.Migrations
                 {
                     table.PrimaryKey("PK_TRUCKS", x => x.TruckId);
                     table.ForeignKey(
-                        name: "FK_TRUCKS_TRUCK_MODELS_ModelTruckModelId",
-                        column: x => x.ModelTruckModelId,
+                        name: "FK_TRUCKS_TRUCK_MODELS_TruckModelId",
+                        column: x => x.TruckModelId,
                         principalSchema: "VOLVOTRUCKS",
                         principalTable: "TRUCK_MODELS",
                         principalColumn: "TruckModelId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -61,10 +61,10 @@ namespace VolvoTrucks.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_TRUCKS_ModelTruckModelId",
+                name: "IX_TRUCKS_TruckModelId",
                 schema: "VOLVOTRUCKS",
                 table: "TRUCKS",
-                column: "ModelTruckModelId");
+                column: "TruckModelId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

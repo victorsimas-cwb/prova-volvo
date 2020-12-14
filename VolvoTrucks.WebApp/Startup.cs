@@ -30,10 +30,13 @@ namespace VolvoTrucks.WebApp
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, VolvoTruckContext dbContext)
         {
+            
+
             if (env.IsDevelopment())
             {
+                dbContext.Database.Migrate();
                 app.UseDeveloperExceptionPage();
             }
             else
@@ -50,7 +53,7 @@ namespace VolvoTrucks.WebApp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Trucks}/{action=Index}/{id?}");
             });
         }
     }

@@ -8,9 +8,11 @@ namespace VolvoTrucks.Services
     public interface ITruckService
     {
         List<TruckModel> ListModels();
+        TruckModel FindModelById(int id);
         List<TruckModel> ListAvailableModels();
         List<Truck> ListAllTrucks();
+        Truck FindTruckById(int id);
         void SaveOrUpdateTruck(Truck truck);
-        List<Truck> ListTrucks(string field, string param);
+        void DeleteTruck(int id);
     }
 }

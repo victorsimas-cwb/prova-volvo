@@ -23,6 +23,7 @@ namespace VolvoTrucks.DataAccess
             {
                 ent.ToTable("TRUCK_MODELS");
                 ent.HasKey(p => p.TruckModelId);
+                ent.HasMany(t => t.Trucks).WithOne(m => m.Model);
                 ent.HasData(
                     new TruckModel
                     {
@@ -53,11 +54,12 @@ namespace VolvoTrucks.DataAccess
         }
         private void ConfigTrucks(ModelBuilder builder)
         {
-            builder.Entity<Truck>(ent => 
+            builder.Entity<Truck>(ent =>
             {
                 ent.ToTable("TRUCKS");
                 ent.HasKey(p => p.TruckId);
-                ent.HasOne(p => p.Model).WithMany(m => m.Trucks);
+                ent.HasOne(p => p.Model).WithMany(m => m.Trucks).HasForeignKey(f => f.TruckModelId);
+
             });
         }
 

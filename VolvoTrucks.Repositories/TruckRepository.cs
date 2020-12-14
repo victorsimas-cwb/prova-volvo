@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using VolvoTrucks.DataAccess;
@@ -16,27 +16,27 @@ namespace VolvoTrucks.Repositories
 
         public List<Truck> FindAllTrucks()
         {
-            return _ctx.Trucks.ToList();
+            return _ctx.Trucks.Include(m => m.Model).ToList();
         }
 
         public Truck FindById(int id)
         {
-            return _ctx.Trucks.Where(t => t.TruckId == id).FirstOrDefault();
+            return _ctx.Trucks.Where(t => t.TruckId == id).Include(m => m.Model).FirstOrDefault();
         }
 
         public List<Truck> FindByModelId(int modelId)
         {
-            return _ctx.Trucks.Where(t => t.Model.TruckModelId == modelId).ToList();
+            return _ctx.Trucks.Where(t => t.Model.TruckModelId == modelId).Include(m => m.Model).ToList();
         }
 
         public List<Truck> FindByManufacturingYear(int year)
         {
-            return _ctx.Trucks.Where(t => t.ManufacturingYear == year).ToList();
+            return _ctx.Trucks.Where(t => t.ManufacturingYear == year).Include(m => m.Model).ToList();
         }
 
         public List<Truck> FindByModelYear(int year)
         {
-            return _ctx.Trucks.Where(t => t.ModelYear == year).ToList();
+            return _ctx.Trucks.Where(t => t.ModelYear == year).Include(m => m.Model).ToList();
         }
 
         public void Save(Truck truck)

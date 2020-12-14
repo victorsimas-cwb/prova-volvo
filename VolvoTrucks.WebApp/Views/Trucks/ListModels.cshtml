@@ -1,0 +1,34 @@
+﻿@model IEnumerable<VolvoTrucks.Domain.TruckModel>
+
+@{
+    ViewData["Title"] = "List All Models";
+}
+
+<h1>List All Models</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Available)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Available)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

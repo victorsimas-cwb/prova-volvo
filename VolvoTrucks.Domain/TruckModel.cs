@@ -9,6 +9,6 @@ namespace VolvoTrucks.Domain
         public int TruckModelId { get; set; }
         public string Model { get; set; }
         public bool Available { get; set; }
-        public ICollection<Truck> Trucks { get; set; }
+        public virtual ICollection<Truck> Trucks { get; set; }
     }
 }

@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolvoTrucks.WebApp", "VolvoTrucks.WebApp\VolvoTrucks.WebApp.csproj", "{1F0EA8F0-FE9C-417F-B089-1F15962B9921}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolvoTrucks.WebApp", "VolvoTrucks.WebApp\VolvoTrucks.WebApp.csproj", "{1F0EA8F0-FE9C-417F-B089-1F15962B9921}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolvoTrucks.Domain", "VolvoTrucks.Domain\VolvoTrucks.Domain.csproj", "{33462B5D-7CC2-44A8-8C7B-93F609A862B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolvoTrucks.Domain", "VolvoTrucks.Domain\VolvoTrucks.Domain.csproj", "{33462B5D-7CC2-44A8-8C7B-93F609A862B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolvoTrucks.DataAccess", "VolvoTrucks.DataAccess\VolvoTrucks.DataAccess.csproj", "{963E2186-0F09-483F-9047-0D6E30CCACF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolvoTrucks.DataAccess", "VolvoTrucks.DataAccess\VolvoTrucks.DataAccess.csproj", "{963E2186-0F09-483F-9047-0D6E30CCACF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolvoTrucks.Repositories", "VolvoTrucks.Repositories\VolvoTrucks.Repositories.csproj", "{CE33A723-87AE-469C-8F7F-5E5B5EFB7E38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolvoTrucks.Repositories", "VolvoTrucks.Repositories\VolvoTrucks.Repositories.csproj", "{CE33A723-87AE-469C-8F7F-5E5B5EFB7E38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolvoTrucks.Services", "VolvoTrucks.Services\VolvoTrucks.Services.csproj", "{6A0C2F50-BA60-4F40-868B-291C65ABA56B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolvoTrucks.Services", "VolvoTrucks.Services\VolvoTrucks.Services.csproj", "{6A0C2F50-BA60-4F40-868B-291C65ABA56B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolvoTrucks.NUnit.Tests", "VolvoTrucks.NUnit.Tests\VolvoTrucks.NUnit.Tests.csproj", "{8F8EA2E8-AB14-465F-BBDB-B1EA6D72C215}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{6A0C2F50-BA60-4F40-868B-291C65ABA56B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A0C2F50-BA60-4F40-868B-291C65ABA56B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A0C2F50-BA60-4F40-868B-291C65ABA56B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F8EA2E8-AB14-465F-BBDB-B1EA6D72C215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F8EA2E8-AB14-465F-BBDB-B1EA6D72C215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F8EA2E8-AB14-465F-BBDB-B1EA6D72C215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F8EA2E8-AB14-465F-BBDB-B1EA6D72C215}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -22,6 +22,11 @@ namespace VolvoTrucks.Services
             return _modelRepo.FindAllModels();
         }
 
+        public TruckModel FindModelById(int id)
+        {
+            return _modelRepo.FindById(id);
+        }
+
         public List<TruckModel> ListAvailableModels()
         {
             return _modelRepo.FindAllAvailableModels();
@@ -30,6 +35,11 @@ namespace VolvoTrucks.Services
         public List<Truck> ListAllTrucks()
         {
             return _truckRepo.FindAllTrucks();
+        }
+
+        public Truck FindTruckById(int id)
+        {
+            return _truckRepo.FindById(id);
         }
 
         public void SaveOrUpdateTruck(Truck truck)
@@ -46,33 +56,12 @@ namespace VolvoTrucks.Services
             }
         }
 
-        public List<Truck> ListTrucks(string field, string param)
+        public void DeleteTruck(int id)
         {
-            if (field == "id" || field == "ma_year" || field == "mo_year" || field == "model_id")
+            if (id > 0)
             {
-                string param_s = Regex.Replace(param, "[^0-9]", "");
-                int param_i = Int32.Parse(param_s);
-                switch(field)
-                {
-                    case "id":
-                        List<Truck> res = new List<Truck>();
-                        res.Add(_truckRepo.FindById(param_i));
-                        return res;
-                    case "ma_year":
-                        return _truckRepo.FindByManufacturingYear(param_i);
-                    case "mo_year":
-                        return _truckRepo.FindByModelYear(param_i);
-                    case "model_id":
-                        return _truckRepo.FindByModelId(param_i);
-                    default:
-                        return _truckRepo.FindAllTrucks();
-                }
+                _truckRepo.Delete(id);
             }
-            else
-            {
-                return null;
-            }
-
         }
 
     }
